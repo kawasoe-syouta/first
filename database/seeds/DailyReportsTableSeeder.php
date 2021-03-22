@@ -12,6 +12,6 @@ class DailyReportsTableSeeder extends Seeder
     public function run()
     {
         DB::table('daily_reports')->truncate();
-        factory('App\Models\DailyReport', 100)->create();
+        factory('App\Models\DailyReport', 200)->create();
     }
 }

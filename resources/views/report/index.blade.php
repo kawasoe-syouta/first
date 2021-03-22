@@ -32,7 +32,7 @@
       </tbody>
     </table>
     <div aria-label="Page navigation example" class="d-flex justify-content-center">
-      {{ $daily_reports->links() }}
+      {{ $daily_reports->appends(Request::query())->links() }}
     </div>
   </div>
 </div>

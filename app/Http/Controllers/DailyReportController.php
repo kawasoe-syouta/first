@@ -21,11 +21,19 @@ class DailyReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $daily_reports = $this->daily_report->orderBy('reporting_time', 'desc')->paginate(DailyReport::List);
+        $reportingTime = $request->input('reporting_time');
 
-        return view('report.index', compact('daily_reports'));
+        $query = $this->daily_report->query();
+
+        if (!empty($reportingTime)) {
+            $query->where('reporting_time', 'LIKE', "{$reportingTime}%");
+        }
+
+        $daily_reports = $query->orderBy('reporting_time', 'desc')->paginate(DailyReport::List);
+
+        return view('report.index', compact('daily_reports', 'reportingTime'));
     }
 
     /**
