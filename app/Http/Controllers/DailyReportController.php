@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\User\DailyReportRequest;
+use App\Models\DailyReport;
+use Auth;
 
 class DailyReportController extends Controller
 {
+    private $daily_report;
+
+    public function __construct(DailyReport $instanceClass)
+    {
+        $this->daily_report = $instanceClass;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +23,9 @@ class DailyReportController extends Controller
      */
     public function index()
     {
-        //
+        $daily_reports = $this->daily_report->orderBy('reporting_time', 'desc')->paginate(DailyReport::List);
+
+        return view('report.index', compact('daily_reports'));
     }
 
     /**
@@ -23,7 +35,7 @@ class DailyReportController extends Controller
      */
     public function create()
     {
-        //
+        return view('report.create');
     }
 
     /**
