@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\DailyReportRequest;
+use App\Http\Requests\DailyReportRequest;
 use App\Models\DailyReport;
 use Auth;
 
@@ -44,9 +44,14 @@ class DailyReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DailyReportRequest $request)
     {
-        //
+        $inputs = $request->all();
+        $inputs['user_id'] = Auth::id();
+
+        $this->daily_report->fill($inputs)->save();
+
+        return redirect()->route('report.index');
     }
 
     /**

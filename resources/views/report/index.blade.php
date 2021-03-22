@@ -8,14 +8,13 @@
       {{--  TODO 日報検索機能  --}}
       {!! Form::open(['route' => 'report.index', 'class' => 'btn-group', 'method' => 'GET']) !!}
         {!! Form::month('reporting_time', null, ['class' => 'form-control']) !!}
-        {!! Form::button('<i class="fa fa-search"></i>', ['class' => 'btn btn-icon', 'type' => 'submit']) !!}
+        {!! Form::button('<i class="fa fa-search"></i>', ['class' => 'btn btn-info', 'type' => 'submit']) !!}
       {!! Form::close() !!}
       <a class = "btn btn-success" href="{{ route('report.create') }}"><i class="fa fa-plus"></i></a>
     </div>
     <table class="table table-striped mt-4">
       <thead>
         <tr>
-          <th class="col-xs-2">Id</th>
           <th class="col-xs-2">Date</th>
           <th class="col-xs-3">Title</th>
           <th class="col-xs-5">Content</th>
@@ -24,7 +23,6 @@
       <tbody>
         @foreach ($daily_reports as $daily_report)
         <tr>
-          <th scope="row">{{ $daily_report->id }}</th>
           <td>{{ $daily_report->reporting_time->format('Y-m-d') }}</td>
           <td>{{ mb_strimwidth($daily_report->title, 0, 20, '...') }}</td>
           <td>{{ mb_strimwidth($daily_report->contents, 0, 30, '...') }}</td>
