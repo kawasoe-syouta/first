@@ -8,7 +8,7 @@
       {{--  TODO 日報検索機能  --}}
       {!! Form::open(['route' => 'report.index', 'class' => 'btn-group', 'method' => 'GET']) !!}
         {!! Form::month('reporting_time', null, ['class' => 'form-control']) !!}
-        {!! Form::button('<i class="fa fa-search"></i>', ['class' => 'btn btn-info', 'type' => 'submit']) !!}
+        {!! Form::button('<i class="fa fa-search"></i>', ['class' => 'btn btn-primary', 'type' => 'submit']) !!}
       {!! Form::close() !!}
       <a class = "btn btn-success" href="{{ route('report.create') }}"><i class="fa fa-plus"></i></a>
     </div>
