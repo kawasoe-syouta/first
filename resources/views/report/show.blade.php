@@ -2,7 +2,7 @@
 @section ('content')
 
 <div class="main-wrap">
-  <div class="container">
+  <div class="container mt-5">
     <h1 class="brand-header">日報詳細</h1>
     <div class="card">
       <div class="card-header">

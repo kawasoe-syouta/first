@@ -2,7 +2,7 @@
 @section ('content')
 
 <div class="main-wrap">
-  <div class="container">
+  <div class="container mt-5">
     <h2 class="brand-header">日報作成</h2>
     {!! Form::open(['route' => 'report.store']) !!}
       <div class="form-group form-size-small @if ($errors->has('reporting_time')) has-error @endif">

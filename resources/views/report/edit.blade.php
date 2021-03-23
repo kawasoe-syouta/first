@@ -2,7 +2,7 @@
 @section ('content')
 
 <div class="main-wrap">
-  <div class="container">
+  <div class="container mt-5">
     <h1 class="brand-header">日報編集</h1>
     {!! Form::open(['route' => ['report.update', $daily_report->id], 'method' => 'PUT']) !!}
       <div class="form-group form-size-small @if ($errors->has('reporting_time')) has-error @endif">

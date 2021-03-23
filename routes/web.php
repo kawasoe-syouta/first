@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('report', 'DailyReportController');
+Route::resource('message', 'MessageController');
+Route::post('message/message', 'MessageController@message')->name('message');
+Route::get('/result/ajax', 'MessageController@getData');

@@ -50,7 +50,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 64px;
             }
 
             .links > a {
@@ -89,6 +89,11 @@
                 <div class="title m-b-md">
                     <a class="text-secondary" href="{{ route('report.index') }}">
                         DailyReport
+                    </a>
+                </div>
+                <div class="title m-b-md">
+                    <a class="text-secondary" href="{{ route('message.index') }}">
+                        Message
                     </a>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 @section ('content')
 
 <div class="main-wrap">
-  <div class="container text-center">
+  <div class="container mt-5 text-center">
     <h2 class="brand-header">日報一覧</h2>
     <div class="btn-wrapper">
       {{--  TODO 日報検索機能  --}}
