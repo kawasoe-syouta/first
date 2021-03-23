@@ -35,8 +35,8 @@ class MessageController extends Controller
         $message = $request->input('message');
         Message::create([
         'user_id' => $user->id,
-        'name' => $user->name,
-        'message' => $message
+        'name'    => $user->name,
+        'message' => $message,
         ]);
 
     return redirect()->route('message.index');
